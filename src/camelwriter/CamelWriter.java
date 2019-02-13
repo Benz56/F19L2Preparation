@@ -34,7 +34,7 @@ public class CamelWriter {
     private void convert2camel(String line) {
         String[] split = line.trim().split(" ");
         for (int i = 0; i < split.length; i++) {
-            split[i] = (i == 0 ? split[i].toLowerCase() : split[i].substring(0, 1).toUpperCase()) + (i > 0 && split[i].length() > 1 ? split[i].substring(1).toLowerCase() : "");
+            split[i] = (i == 0 ? split[i].toLowerCase() : split[i].substring(0, 1).toUpperCase()) + (i > 0 ? split[i].substring(1).toLowerCase() : "");
         }
         System.out.println(String.join("", split));
     }
